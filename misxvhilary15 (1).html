@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="html">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invitación XV años — Hilary Gisel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --rosa:#f2b8c6;
+      --champagne:#f7e0c1;
+      --dorado:#b98b5e;
+      --oscuro:#2b2b2b;
+      --claro:#fffaf8;
+      --vidrio:rgba(255,255,255,.40);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family:'Montserrat',sans-serif;
+      color:var(--oscuro);
+      background:radial-gradient(100% 100% at 0% 0%, var(--champagne), transparent 60%),
+                 radial-gradient(120% 120% at 100% 0%, #ecb0c5 10%, transparent 65%),
+                 linear-gradient(180deg, #eeb49e 0%, #ebc8d4 50%, #eec8c8 100%);
+      line-height:1.7;
+    }
+    .wrap{max-width:1000px;margin:0 auto;padding:24px}
+
+    /* Portada */
+    .hero{
+      position:relative;border-radius:28px;overflow:hidden;aspect-ratio:16/9;background:#eee;
+      box-shadow:0 18px 50px rgba(0,0,0,.12)
+    }
+    .hero img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.9)}
+    .hero::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(110deg, transparent 55%, rgba(0,0,0,.25) 78%, rgba(0,0,0,.45) 100%);
+    }
+    .banner{
+      position:absolute; right:32px; bottom:22px;
+      background:var(--vidrio); backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.55);
+      border-radius:22px; padding:18px 24px; text-align:right;
+      max-width:min(60%, 520px);
+      box-shadow:0 10px 26px rgba(0,0,0,.18);
+    }
+    .title{font-family:'Playfair Display',serif;font-size:clamp(32px,6vw,56px);margin:0;color:#f6f0ea;text-shadow:0 2px 10px rgba(0,0,0,.35);}
+    .subtitle{font-size:clamp(18px,3.6vw,28px);margin:6px 0 0;font-weight:700;color:#ffe8d6;text-shadow:0 1px 6px rgba(0,0,0,.35);}
+
+    /* Secciones */
+    .card{
+      background:var(--claro);border-radius:24px;padding:clamp(20px,4vw,44px);
+      margin:22px auto;box-shadow:0 12px 36px rgba(0,0,0,.08);
+      border:1px solid rgba(0,0,0,.06);
+    }
+    h2,h3,p,.center{text-align:center}
+    h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4.2vw,36px);color:#5a4430;margin:0 0 10px}
+    p.lead{max-width:70ch;margin:10px auto 0;color:#5c5c5c;font-size:clamp(15px,2.5vw,18px)}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.12),transparent);margin:18px auto;width:min(92%,780px)}
+
+    /* Familia */
+    .familia{max-width:720px;margin:0 auto;text-align:center;font-size:22px;line-height:1.8}
+    .familia strong{display:block;margin-bottom:8px;font-size:24px;color:#5a4430}
+    .memoriam{color:var(--dorado);font-weight:700}
+
+    /* Padrinos */
+    .info{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:860px;margin:0 auto;text-align:center}
+    .info .box{background:linear-gradient(180deg,#fff,#fff7f0);border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:18px 16px;font-weight:700;letter-spacing:.3px}
+    .info .big{font-size:22px}
+
+    /* Countdown */
+    .countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .unit{background:linear-gradient(180deg,#ffffff,#fff3eb);border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:12px 16px;min-width:100px}
+    .value{font-family:'Playfair Display',serif;font-size:40px;font-weight:700}
+    .label{font-size:12px;letter-spacing:1.5px}
+
+    /* Galería más pequeña */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px;justify-items:center}
+    .gallery img{
+      width:90%;
+      height:160px;
+      object-fit:cover;
+      border-radius:14px;
+      transition:transform .25s ease;
+      box-shadow:0 6px 14px rgba(0,0,0,.08);
+    }
+    .gallery img:hover{transform:scale(1.05)}
+
+    /* Botones */
+    .btn{
+      display:inline-block;text-decoration:none;border:none;cursor:pointer;
+      background:linear-gradient(180deg,#fff,#f8ebe2);color:#5a4430;font-weight:800;
+      padding:14px 22px;border-radius:999px;box-shadow:0 6px 18px rgba(185,139,94,.28), inset 0 1px 0 rgba(255,255,255,.7);
+      border:1px solid rgba(185,139,94,.35);
+      transition:transform .12s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.02);box-shadow:0 12px 26px rgba(185,139,94,.32), inset 0 1px 0 rgba(255,255,255,.75)}
+    .btn-primary{background:linear-gradient(180deg,#ffdfe9,#f7cbb5)}
+
+    footer{text-align:center;padding:40px;color:#5a4030}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Portada -->
+    <section class="hero">
+      <img src="C:/Users/Owner/Downloads/XV JILARY/PHOTO-2025-10-12-19-42-37.jpg" alt="Foto de la quinceañera">
+      <div class="banner">
+        <h1 class="title">Mis XV Años</h1>
+        <p class="subtitle">Hilary Gisel</p>
+      </div>
+    </section>
+
+    <!-- Canción favorita -->
+    <section class="card">
+      <h2>Mi canción favorita</h2>
+      <div class="center">
+        <audio id="miAudio" src="C:/Users/Owner/Downloads/SpotiDownloader.com - Tacones Rojos - Sebastian Yatra.mp3"></audio><br>
+        <button class="btn" onclick="toggleAudio()">▶︎ Reproducir / Pausar</button>
+      </div>
+      <div class="divider"></div>
+      <h2>Te invito a compartir conmigo este momento tan especial</h2>
+      <p class="lead">Hoy mi corazón se llena de alegría al llegar a una etapa maravillosa de mi vida; han sido quince años de sueños,
+      aprendizajes y momentos inolvidables que me han convertido en quien soy. Agradezco a Dios por la bendición de tener a mi familia y a las personas que amo
+      acompañándome en este día tan importante. Deseo que esta noche esté llena de sonrisas, música y cariño, porque cada uno de ustedes
+      forma parte de mi historia. Celebremos juntos el inicio de una nueva etapa, llena de ilusiones, esperanza y amor.</p>
+    </section>
+
+    <!-- Familia -->
+    <section class="card">
+      <h2>En compañía de mi familia</h2>
+      <div class="familia">
+        <strong>Mi mamá</strong>
+       - Iris Ponce Aragón
+        <br><br>
+        <strong>Mis abuelitos</strong>
+        -Yanet Avecedo Aragón<br>
+        -Eloy Ponce Navarro<br>
+       - Ines Domínguez Girón<br>
+        <span class="memoriam">🕊️ Domingo Enríquez Rodríguez</span>
+      </div>
+    </section>
+
+    <!-- Padrinos -->
+    <section class="card">
+      <h2>Padrinos</h2>
+      <div class="info">
+        <div class="box">Mary Carmen Aja Enriquez</div>
+        <div class="box">Omar Alejandro Chaverri Guevara</div>
+       
+    </section>
+
+    <!-- Detalles -->
+    <section class="card">
+      <h2>Detalles de la fiesta</h2>
+      <div class="info">
+        <div class="box big">📅 27 de diciembre de 2025</div>
+        <div class="box big">⏰ 3:00 PM</div>
+      </div>
+
+      <div id="countdown" class="countdown">
+        <div class="unit"><div class="value" id="days">--</div><div class="label">DÍAS</div></div>
+        <div class="unit"><div class="value" id="hours">--</div><div class="label">HORAS</div></div>
+        <div class="unit"><div class="value" id="minutes">--</div><div class="label">MINUTOS</div></div>
+        <div class="unit"><div class="value" id="seconds">--</div><div class="label">SEGUNDOS</div></div>
+      </div>
+    </section>
+
+    <!-- Ubicación iglesia  -->
+    <section class="card">
+      <h2>Ubicación</h2>
+      <p class="lead">📍 Iglesia de San Felix Rijo</p>
+      <div class="center">
+        <a class="btn btn-primary" target="_blank" href="https://maps.app.goo.gl/JtrJEsW3JjHAgZF1A">Como llegar </a>
+      </div>
+      <p class="lead">📍 los esperamos despues de la ceremonia religiosa en la recepcción</p>
+      <div class="center">
+        <a class="btn btn-primary" target="_blank" href="https://maps.app.goo.gl/AXpJ6RiNLgPfQBit6">Como llegar</a>
+      </div>
+    </section>
+    
+
+    <!-- Galería -->
+    <section class="card">
+      <h2>Momentos especiales</h2>
+      <div class="gallery">
+        <img src="C:\Users\Owner\Downloads\IMG_7613.jpg" alt="Preparativos">
+        <img src="C:\Users\Owner\Downloads\IMG_7727.jpg" alt="Vals">
+        <img src="C:\Users\Owner\Downloads\IMG_7581.jpg" alt="Fiesta">
+      </div>
+    </section>
+
+    <!-- Confirmación -->
+    <section class="card">
+      <h2>Confirma tu asistencia</h2>
+      <p class="lead">Por favor confirma tu presencia antes del 10 de diciembre.</p>
+      <div class="center">
+        <a class="btn" target="_blank" href="https://wa.me/2431387826?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Hilary%20Gisel.">Confirmar por WhatsApp</a>
+      </div>
+    </section>
+
+    <footer>
+      Con amor,mio y de mi familia ♥<br>
+      <small>© 2025 Todos los derechos reservados</small>
+    </footer>
+  </div>
+
+  <script>
+    // Temporizador dinámico en tiempo real
+    const target = new Date('2025-12-27T19:00:00-06:00').getTime();
+
+    function updateCountdown(){
+      const diff = target - new Date().getTime();
+      if(diff <= 0){
+        document.getElementById('countdown').innerHTML = '<p>¡Hoy es el gran día! 🎉</p>';
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const seconds = Math.floor((diff % (1000*60)) / 1000);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours.toString().padStart(2,'0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2,'0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2,'0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Reproductor de audio
+    const audio = document.getElementById('miAudio');
+    function toggleAudio(){
+      if(audio.paused){ audio.play(); }
+      else{ audio.pause(); }
+    }
+  </script>
+</body>
+</html>
